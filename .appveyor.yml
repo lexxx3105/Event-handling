@@ -1,10 +1,10 @@
-image: Ubuntu1804  # образ для сборки
+image: Ubuntu2004  # образ для сборки
 
-stack: node 10  # окружение
+stack: node 18  # окружение
 
 branches:
   only:
-    - master  # ветка git
+    - main  # ветка git
 
 cache: node_modules  # кеширование
 
