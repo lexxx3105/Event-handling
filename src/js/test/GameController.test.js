@@ -6,13 +6,13 @@ const mockGamePlay = {
   drawUi: jest.fn(),
   activateHole: jest.fn(),
   deactivateHole: jest.fn(),
-  isActiveHole: jest.fn(() => false), 
+  isActiveHole: jest.fn(() => false),
   updateCurrentScore: jest.fn(),
   showSmashCursor: jest.fn(),
   displayGameOver: jest.fn(),
 };
 
-// Test cases
+
 describe('GameController', () => {
   let gameController;
 
@@ -25,7 +25,7 @@ describe('GameController', () => {
     clearInterval(gameController._interfaceTimer);
   });
 
-  test('init должен установить начальные значения и добавить прослушиватель щелчков по ячейкам', () => {
+  test('init should set initial values and add cell click listener', () => {
     gameController.init();
 
     expect(gameController._dead).toBe(0);
@@ -39,7 +39,7 @@ describe('GameController', () => {
     expect(gameController._interfaceTimer).toBeDefined();
   });
 
-  test('endGame должен завершить игру и навести порядок', () => {
+  test('endGame should end the game and clean up', () => {
     gameController.endGame();
 
     expect(gameController.gameOver).toBe(true);
@@ -49,4 +49,5 @@ describe('GameController', () => {
     expect(mockGamePlay.displayGameOver).toHaveBeenCalledTimes(1);
   });
 
+  // Add more test cases as needed for other methods of the GameController class
 });
